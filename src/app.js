@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 // Provider tag can only have one child component
 import { createStore } from 'redux';
 import reducers from './reducers';
-// Reducers processes data into the store
+// Reducers reduce our application state
 import { Header } from './components/common';
 
 
