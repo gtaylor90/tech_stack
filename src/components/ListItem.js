@@ -11,11 +11,9 @@ class ListItem extends Component {
 
     if (library.id === selectedLibraryId) {
       return (
-        <CardSection>
           <Text>
             {library.id}
           </Text>
-        </CardSection>
       );
     }
   }
@@ -23,7 +21,7 @@ class ListItem extends Component {
     const { titleStyle } = styles;
     const { id, title } = this.props.library;
     // console.log(this.props);
-    
+
     return (
       <TouchableWithoutFeedback
         onPress={() => this.props.selectLibrary(id)}
