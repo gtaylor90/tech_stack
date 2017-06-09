@@ -6,21 +6,18 @@ import * as actions from '../actions';
 
 class ListItem extends Component {
   renderDescription() {
-    // console.log(this.props.library.description);
     const { library, selectedLibraryId } = this.props;
 
     if (library.id === selectedLibraryId) {
       return (
-          <Text>
-            {library.id}
-          </Text>
+        <Text>{library.description}</Text>
       );
     }
   }
+
   render() {
     const { titleStyle } = styles;
     const { id, title } = this.props.library;
-    // console.log(this.props);
 
     return (
       <TouchableWithoutFeedback
@@ -32,7 +29,7 @@ class ListItem extends Component {
               {title}
             </Text>
           </CardSection>
-            {this.renderDescription()}
+          {this.renderDescription()}
         </View>
       </TouchableWithoutFeedback>
     );
@@ -47,7 +44,7 @@ const styles = {
 };
 
 const mapStateToProps = state => {
-  return { selectLibraryId: state.selectedLibraryId };
+  return { selectedLibraryId: state.selectedLibraryId };
 };
 
 export default connect(mapStateToProps, actions)(ListItem);
